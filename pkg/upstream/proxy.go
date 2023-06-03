@@ -90,7 +90,7 @@ func (m *multiUpstreamProxy) registerHTTPUpstreamProxy(upstream options.Upstream
 	return m.registerHandler(upstream, newHTTPUpstreamProxy(upstream, u, sigData, writer.ProxyErrorHandler), writer)
 }
 
-// registerHandler ensures the given handler is regiestered with the serveMux.
+// registerHandler ensures the given handler is registered with the serveMux.
 func (m *multiUpstreamProxy) registerHandler(upstream options.Upstream, handler http.Handler, writer pagewriter.Writer) error {
 	if upstream.RewriteTarget == "" {
 		m.registerSimpleHandler(upstream.Path, handler)
